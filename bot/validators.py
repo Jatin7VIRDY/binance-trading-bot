@@ -1,0 +1,12 @@
+def validate_side(side):
+  if side not in ["BUY","SELL"]:
+    raise ValueError("side must be BUY or SELL")
+  
+def validate_order_type(order_type):
+  if order_type not in ["MARKET","LIMIT"]:
+    raise ValueError("Order type must be MARKET or LIMIT")
+  
+def validate_price(price, order_type):
+  if order_type == "LIMIT" and price is None:
+    raise ValueError("LIMIT orders require price")
+  
